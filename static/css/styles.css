@@ -1,0 +1,198 @@
+/* SSM Connect - Official Stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap');
+
+:root {
+  --ssm-navy-950: #071329;
+  --ssm-navy-900: #0a1b38;
+  --ssm-navy-800: #0f2b5c;
+  --ssm-navy-700: #1a3d7c;
+  --ssm-navy-600: #2552a0;
+  --ssm-gold-500: #f59e0b;
+  --ssm-gold-400: #fbbf24;
+  --ssm-gold-600: #d97706;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.heading-font {
+  font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Glassmorphism Accents */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-dark {
+  background: rgba(10, 27, 56, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Urgent Marquee / Ticker */
+@keyframes tickerSlide {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.92; transform: scale(1.008); }
+}
+
+/* Category Badges */
+.badge-urgent {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+.badge-academic {
+  background-color: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+.badge-exam {
+  background-color: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #ffedd5;
+}
+.badge-seminar {
+  background-color: #f5f3ff;
+  color: #6d28d9;
+  border: 1px solid #ddd6fe;
+}
+.badge-festival {
+  background-color: #fdf2f8;
+  color: #be185d;
+  border: 1px solid #fbcfe8;
+}
+.badge-placement {
+  background-color: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+.badge-class-update {
+  background-color: #fefce8;
+  color: #854d0e;
+  border: 1px solid #fef08a;
+}
+.badge-timetable {
+  background-color: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+/* Card hover animation */
+.announcement-card {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.announcement-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(15, 43, 92, 0.08), 0 8px 10px -6px rgba(15, 43, 92, 0.04);
+}
+
+/* Timetable Grid styling */
+.timetable-grid th, .timetable-grid td {
+  transition: background-color 0.15s ease;
+}
+.timetable-grid td:hover {
+  background-color: #f8fafc;
+}
+
+.period-cell-theory {
+  border-left: 3px solid #3b82f6;
+  background-color: #f8fafc;
+}
+.period-cell-lab {
+  border-left: 3px solid #8b5cf6;
+  background-color: #faf5ff;
+}
+.period-cell-break {
+  background-color: #f1f5f9;
+  color: #64748b;
+  font-weight: 500;
+}
+.period-cell-placement {
+  border-left: 3px solid #10b981;
+  background-color: #f0fdf4;
+}
+
+/* Modal Transition */
+.modal-overlay {
+  animation: fadeIn 0.18s ease-out forwards;
+}
+.modal-content {
+  animation: zoomUp 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomUp {
+  from { opacity: 0; transform: scale(0.96) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Floating Switcher Pill */
+.demo-role-btn.active {
+  background-color: #0f2b5c;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(15, 43, 92, 0.25);
+}
+
+/* Print Stylesheet */
+@media print {
+  header, nav, #quick-role-bar, #mobile-bottom-nav, .no-print, button:not(.print-include) {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .print-page {
+    box-shadow: none !important;
+    border: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .timetable-grid {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .timetable-grid th, .timetable-grid td {
+    border: 1px solid #000000 !important;
+    font-size: 10pt !important;
+  }
+}
+
